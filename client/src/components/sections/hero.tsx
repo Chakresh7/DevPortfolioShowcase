@@ -4,7 +4,7 @@ import { SiGithub, SiLinkedin, SiDribbble } from "react-icons/si";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center bg-background text-foreground">
+    <section className="min-h-screen flex items-center bg-background text-foreground pt-16">
       <div className="container px-4 mx-auto">
         <MotionDiv
           variants={staggerContainer}
@@ -14,12 +14,12 @@ export function Hero() {
         >
           <MotionDiv variants={fadeIn} className="space-y-8">
             <div>
-              <h2 className="text-lg font-medium text-primary mb-2">Hello, I'm</h2>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400">
-                ChakreshKumarVulli
+              <h2 className="text-lg font-medium text-primary mb-2">HELLO, I'M</h2>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                CHAKRESHKUMAR VULLI
               </h1>
-              <p className="text-xl mt-4 text-muted-foreground max-w-lg">
-                Full Stack Developer & UI Designer crafting exceptional digital experiences
+              <p className="text-xl mt-4 text-muted-foreground max-w-lg uppercase">
+                Digital Solution Specialist & Full Stack Developer
               </p>
             </div>
 
@@ -29,14 +29,14 @@ export function Hero() {
                 className="bg-primary hover:bg-primary/90"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                View Projects
+                VIEW PROJECTS
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Contact Me
+                CONTACT ME
               </Button>
             </div>
 
@@ -69,12 +69,12 @@ export function Hero() {
           </MotionDiv>
 
           <MotionDiv variants={fadeIn} className="relative">
-            <div className="aspect-square rounded-full bg-gradient-to-br from-primary/20 to-purple-400/20 p-1">
-              <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
+            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-orange-400/20 p-1">
+              <div className="w-full h-full rounded-2xl bg-background flex items-center justify-center overflow-hidden">
                 <img 
                   src="/avatar.png" 
                   alt="ChakreshKumarVulli"
-                  className="w-[90%] h-[90%] object-cover rounded-full"
+                  className="w-[90%] h-[90%] object-cover"
                 />
               </div>
             </div>
@@ -82,14 +82,14 @@ export function Hero() {
             <div className="absolute -top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
               <div className="flex items-center gap-2">
                 <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse" />
-                <span className="font-medium">Available for Work</span>
+                <span className="font-medium uppercase">Available for Work</span>
               </div>
             </div>
 
             <div className="absolute bottom-4 -left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
               <div className="text-center">
                 <span className="block text-2xl font-bold text-primary">5+</span>
-                <span className="text-sm text-muted-foreground">Years Experience</span>
+                <span className="text-sm text-muted-foreground uppercase">Years Experience</span>
               </div>
             </div>
           </MotionDiv>
