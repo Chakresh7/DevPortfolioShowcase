@@ -1,12 +1,13 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { type ReactElement } from "react";
 
-export const fadeIn = {
+export const fadeIn: Variants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: 20 },
 };
 
-export const staggerContainer = {
+export const staggerContainer: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.1,

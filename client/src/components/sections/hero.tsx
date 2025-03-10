@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MotionSection, fadeIn } from "@/components/ui/motion";
+import { MotionSection, MotionDiv, fadeIn } from "@/components/ui/motion";
 import { SiGithub, SiLinkedin, SiBehance, SiDribbble } from "react-icons/si";
 
 export function Hero() {
@@ -12,7 +12,7 @@ export function Hero() {
       className="min-h-screen flex items-center bg-background text-foreground relative overflow-hidden"
     >
       <div className="container px-4 mx-auto grid md:grid-cols-2 gap-8 items-center">
-        <div className="space-y-6">
+        <MotionDiv variants={fadeIn} className="space-y-6">
           <h2 className="text-lg font-medium text-primary">Hy! I Am</h2>
           <h1 className="text-5xl md:text-6xl font-bold">
             Brunao Dev
@@ -37,8 +37,8 @@ export function Hero() {
               <SiDribbble size={24} />
             </a>
           </div>
-        </div>
-        <div className="relative">
+        </MotionDiv>
+        <MotionDiv variants={fadeIn} className="relative">
           <img 
             src="/hero-image.png" 
             alt="Developer Portrait" 
@@ -52,7 +52,7 @@ export function Hero() {
             <span className="text-sm font-medium">Years of</span>
             <span className="block text-primary font-bold">Experience</span>
           </div>
-        </div>
+        </MotionDiv>
       </div>
     </MotionSection>
   );
