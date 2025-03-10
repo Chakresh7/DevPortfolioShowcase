@@ -19,13 +19,14 @@ export function Projects() {
     ? projects?.filter((p) => p.category === category)
     : projects;
 
-  const categories = [...new Set(projects?.map((p) => p.category))];
+  // Use Array.from instead of Set spread
+  const categories = Array.from(new Set(projects?.map((p) => p.category) || []));
 
   return (
     <section className="py-20">
       <div className="container px-4 mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Our Projects</h2>
-        
+
         <div className="flex gap-4 justify-center mb-12">
           <Button
             variant={category === null ? "default" : "outline"}
@@ -68,7 +69,7 @@ export function Projects() {
                   {project.link && (
                     <Button
                       variant="outline"
-                      onClick={() => window.open(project.link, "_blank")}
+                      onClick={() => window.open(project.link || '', '_blank')}
                     >
                       View Project
                     </Button>
