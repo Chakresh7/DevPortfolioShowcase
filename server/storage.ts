@@ -44,6 +44,12 @@ export class MemStorage implements IStorage {
       role: "Lead Developer",
       image: "/team/john.svg",
     },
+    {
+      id: 2,
+      name: "Chakreshkumar",
+      role: "Senior Developer",
+      image: "/team/chakresh.svg",
+    },
     // Add more team members...
   ];
 
