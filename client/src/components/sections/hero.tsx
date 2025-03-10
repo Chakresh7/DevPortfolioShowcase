@@ -12,7 +12,7 @@ export function Hero() {
           className="max-w-4xl mx-auto text-center space-y-8"
         >
           <MotionDiv variants={fadeIn}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black">
               MY JOB IS TO TURN YOUR IDEAS IN TO REALITY
             </h1>
           </MotionDiv>
@@ -40,15 +40,15 @@ export function Hero() {
           <MotionDiv variants={fadeIn} className="flex justify-center gap-12 pt-12">
             <div>
               <span className="block text-4xl font-bold text-primary">02+</span>
-              <span className="text-sm text-muted-foreground uppercase">Years Experience</span>
+              <span className="text-sm text-black uppercase">Years Experience</span>
             </div>
             <div>
               <span className="block text-4xl font-bold text-primary">60+</span>
-              <span className="text-sm text-muted-foreground uppercase">Projects Completed</span>
+              <span className="text-sm text-black uppercase">Projects Completed</span>
             </div>
             <div>
               <span className="block text-4xl font-bold text-primary">32+</span>
-              <span className="text-sm text-muted-foreground uppercase">Happy Clients</span>
+              <span className="text-sm text-black uppercase">Happy Clients</span>
             </div>
           </MotionDiv>
         </MotionDiv>
