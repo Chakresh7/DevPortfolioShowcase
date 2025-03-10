@@ -23,7 +23,7 @@ const services = [
 
 export function Services() {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section id="services" className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container px-4 mx-auto">
         <MotionDiv
           variants={staggerContainer}
@@ -32,9 +32,9 @@ export function Services() {
           className="space-y-12"
         >
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-lg font-medium text-primary mb-2">My Awesome</h2>
-            <h3 className="text-3xl font-bold mb-4">Services</h3>
-            <p className="text-muted-foreground">
+            <h2 className="text-lg font-medium text-primary mb-2">MY AWESOME</h2>
+            <h3 className="text-3xl font-bold mb-4">SERVICES</h3>
+            <p className="text-muted-foreground uppercase">
               Delivering high-quality digital solutions and exceptional user experiences
             </p>
           </div>
@@ -44,9 +44,9 @@ export function Services() {
               <MotionDiv key={index} variants={fadeIn}>
                 <Card className="p-6 h-full bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300">
                   <div className="text-primary mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 uppercase">{service.title}</h3>
                   <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full uppercase">
                     Learn More
                   </Button>
                 </Card>

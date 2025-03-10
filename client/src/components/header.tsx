@@ -9,20 +9,42 @@ export function Header() {
           <Link href="/">
             <a className="text-lg font-bold text-primary">CV</a>
           </Link>
-          
+
           <nav className="hidden md:flex items-center gap-6">
             <Link href="#services">
-              <a className="text-sm font-medium hover:text-primary transition-colors">SERVICES</a>
+              <a className="text-sm font-medium hover:text-primary transition-colors"
+                 onClick={(e) => {
+                   e.preventDefault();
+                   document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                 }}>
+                SERVICES
+              </a>
             </Link>
             <Link href="#projects">
-              <a className="text-sm font-medium hover:text-primary transition-colors">PROJECTS</a>
+              <a className="text-sm font-medium hover:text-primary transition-colors"
+                 onClick={(e) => {
+                   e.preventDefault();
+                   document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                 }}>
+                PROJECTS
+              </a>
             </Link>
             <Link href="#contact">
-              <a className="text-sm font-medium hover:text-primary transition-colors">CONTACT</a>
+              <a className="text-sm font-medium hover:text-primary transition-colors"
+                 onClick={(e) => {
+                   e.preventDefault();
+                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                 }}>
+                CONTACT
+              </a>
             </Link>
           </nav>
 
-          <Button variant="outline" size="sm">
+          <Button 
+            variant="outline" 
+            size="sm"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             GET IN TOUCH
           </Button>
         </div>
