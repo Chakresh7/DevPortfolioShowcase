@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { MotionDiv, staggerContainer, fadeIn } from "@/components/ui/motion";
-import { Code2, Palette, Globe } from "lucide-react";
+import { Code2, Globe, Palette } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
@@ -22,7 +23,7 @@ const services = [
 
 export function Services() {
   return (
-    <section className="py-20 bg-muted/50">
+    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container px-4 mx-auto">
         <MotionDiv
           variants={staggerContainer}
@@ -30,20 +31,24 @@ export function Services() {
           animate="animate"
           className="space-y-12"
         >
-          <div className="text-center">
-            <h2 className="text-3xl font-bold">My Services</h2>
-            <p className="mt-4 text-muted-foreground">
-              Expertise in delivering comprehensive digital solutions
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-lg font-medium text-primary mb-2">My Awesome</h2>
+            <h3 className="text-3xl font-bold mb-4">Services</h3>
+            <p className="text-muted-foreground">
+              Delivering high-quality digital solutions and exceptional user experiences
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <MotionDiv key={index} variants={fadeIn}>
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow bg-background">
+                <Card className="p-6 h-full bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300">
                   <div className="text-primary mb-4">{service.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
                 </Card>
               </MotionDiv>
             ))}
