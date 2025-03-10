@@ -1,32 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { MotionDiv, staggerContainer, fadeIn } from "@/components/ui/motion";
-import { SiGithub, SiLinkedin, SiDribbble } from "react-icons/si";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center bg-background text-foreground pt-16">
+    <section className="min-h-screen flex items-center pt-16 bg-white">
       <div className="container px-4 mx-auto">
         <MotionDiv
           variants={staggerContainer}
           initial="initial"
           animate="animate"
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="max-w-4xl mx-auto text-center space-y-8"
         >
-          <MotionDiv variants={fadeIn} className="space-y-8">
-            <div>
-              <h2 className="text-lg font-medium text-primary mb-2">HELLO, I'M</h2>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                CHAKRESHKUMAR VULLI
-              </h1>
-              <p className="text-xl mt-4 text-muted-foreground max-w-lg uppercase">
-                Digital Solution Specialist & Full Stack Developer
-              </p>
-            </div>
+          <MotionDiv variants={fadeIn}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+              MY JOB IS TO TURN YOUR IDEAS IN TO REALITY
+            </h1>
+          </MotionDiv>
 
-            <div className="flex flex-wrap gap-4">
+          <MotionDiv variants={fadeIn}>
+            <div className="flex flex-wrap gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90"
+                className="bg-black hover:bg-black/90 text-white"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 VIEW PROJECTS
@@ -34,63 +29,26 @@ export function Hero() {
               <Button 
                 size="lg" 
                 variant="outline"
+                className="border-black hover:bg-black/5"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                CONTACT ME
+                HIRE ME
               </Button>
-            </div>
-
-            <div className="flex gap-6 pt-4">
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <SiGithub size={24} />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <SiLinkedin size={24} />
-              </a>
-              <a 
-                href="https://dribbble.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <SiDribbble size={24} />
-              </a>
             </div>
           </MotionDiv>
 
-          <MotionDiv variants={fadeIn} className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-orange-400/20 p-1">
-              <div className="w-full h-full rounded-2xl bg-background flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/avatar.png" 
-                  alt="ChakreshKumarVulli"
-                  className="w-[90%] h-[90%] object-cover"
-                />
-              </div>
+          <MotionDiv variants={fadeIn} className="flex justify-center gap-12 pt-12">
+            <div>
+              <span className="block text-4xl font-bold text-primary">02+</span>
+              <span className="text-sm text-muted-foreground uppercase">Years Experience</span>
             </div>
-
-            <div className="absolute -top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-              <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse" />
-                <span className="font-medium uppercase">Available for Work</span>
-              </div>
+            <div>
+              <span className="block text-4xl font-bold text-primary">60+</span>
+              <span className="text-sm text-muted-foreground uppercase">Projects Completed</span>
             </div>
-
-            <div className="absolute bottom-4 -left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-              <div className="text-center">
-                <span className="block text-2xl font-bold text-primary">5+</span>
-                <span className="text-sm text-muted-foreground uppercase">Years Experience</span>
-              </div>
+            <div>
+              <span className="block text-4xl font-bold text-primary">32+</span>
+              <span className="text-sm text-muted-foreground uppercase">Happy Clients</span>
             </div>
           </MotionDiv>
         </MotionDiv>

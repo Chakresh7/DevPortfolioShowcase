@@ -3,39 +3,48 @@ import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/">
-            <a className="text-lg font-bold text-primary">CV</a>
+            <a className="text-2xl font-bold">M</a>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
+            <Link href="#about">
+              <a className="text-sm hover:text-primary transition-colors uppercase"
+                 onClick={(e) => {
+                   e.preventDefault();
+                   document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                 }}>
+                About
+              </a>
+            </Link>
+            <Link href="#process">
+              <a className="text-sm hover:text-primary transition-colors uppercase"
+                 onClick={(e) => {
+                   e.preventDefault();
+                   document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+                 }}>
+                Process
+              </a>
+            </Link>
             <Link href="#services">
-              <a className="text-sm font-medium hover:text-primary transition-colors"
+              <a className="text-sm hover:text-primary transition-colors uppercase"
                  onClick={(e) => {
                    e.preventDefault();
                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
                  }}>
-                SERVICES
+                Services
               </a>
             </Link>
             <Link href="#projects">
-              <a className="text-sm font-medium hover:text-primary transition-colors"
+              <a className="text-sm hover:text-primary transition-colors uppercase"
                  onClick={(e) => {
                    e.preventDefault();
                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
                  }}>
-                PROJECTS
-              </a>
-            </Link>
-            <Link href="#contact">
-              <a className="text-sm font-medium hover:text-primary transition-colors"
-                 onClick={(e) => {
-                   e.preventDefault();
-                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                 }}>
-                CONTACT
+                Projects
               </a>
             </Link>
           </nav>
@@ -43,9 +52,10 @@ export function Header() {
           <Button 
             variant="outline" 
             size="sm"
+            className="uppercase"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            GET IN TOUCH
+            Let's Talk
           </Button>
         </div>
       </div>
