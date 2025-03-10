@@ -1,54 +1,49 @@
-import { useQuery } from "@tanstack/react-query";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { MotionDiv, staggerContainer, fadeIn } from "@/components/ui/motion";
-import type { Service } from "@shared/schema";
-import { LucideIcon, Code, Smartphone, Palette } from "lucide-react";
+import { FaCode, FaPalette, FaLaptopCode } from "react-icons/fa";
 
-const icons: Record<string, LucideIcon> = {
-  code: Code,
-  smartphone: Smartphone,
-  palette: Palette,
-};
+const services = [
+  {
+    icon: <FaCode className="w-8 h-8" />,
+    title: "Developer",
+    description: "Creating and maintaining web applications using modern technologies",
+  },
+  {
+    icon: <FaPalette className="w-8 h-8" />,
+    title: "UX/UI",
+    description: "Designing intuitive and engaging user interfaces",
+  },
+  {
+    icon: <FaLaptopCode className="w-8 h-8" />,
+    title: "Design",
+    description: "Creating visually appealing and functional designs",
+  },
+];
 
 export function Services() {
-  const { data: services, isLoading } = useQuery<Service[]>({ 
-    queryKey: ["/api/services"]
-  });
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <section className="py-20 bg-muted">
+    <section className="py-20">
       <div className="container px-4 mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">My Awesome</h2>
+          <h3 className="text-4xl font-bold text-primary">Services</h3>
+        </div>
+
         <MotionDiv
           variants={staggerContainer}
           initial="initial"
           animate="animate"
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {services?.map((service) => {
-            const Icon = icons[service.icon] || Code;
-            return (
-              <MotionDiv
-                key={service.id}
-                variants={fadeIn}
-                className="group"
-              >
-                <Card className="h-full transition-transform duration-300 group-hover:scale-105">
-                  <CardHeader>
-                    <Icon className="h-8 w-8 mb-4 text-primary" />
-                    <h3 className="text-xl font-semibold">{service.title}</h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </CardContent>
-                </Card>
-              </MotionDiv>
-            );
-          })}
+          {services.map((service, index) => (
+            <MotionDiv key={index} variants={fadeIn}>
+              <Card className="p-6 hover:bg-primary/5 transition-colors">
+                <div className="text-primary mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-muted-foreground">{service.description}</p>
+              </Card>
+            </MotionDiv>
+          ))}
         </MotionDiv>
       </div>
     </section>
