@@ -35,15 +35,28 @@ export function Contact() {
   });
 
   function onSubmit(data: FormValues) {
+    // WhatsApp number with country code (91 for India)
+    const whatsappNumber = "917569566949";
+    
+    // Format the message in a simple, direct way
+    const message = `Name: ${data.name} Email: ${data.email} Message: ${data.message}`;
+
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
     toast({
       title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
+      description: "Redirecting you to WhatsApp to complete your message.",
     });
+    
     form.reset();
   }
 
   return (
-    <section className="py-20 bg-muted">
+    <section id="contact" className="py-24">
       <div className="container px-4 mx-auto">
         <MotionDiv
           variants={fadeIn}
@@ -51,9 +64,12 @@ export function Contact() {
           animate="animate"
           className="max-w-2xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-4">
             Let's Bring Your Brand to the Next Level
           </h2>
+          <p className="text-center text-muted-foreground mb-8">
+            Fill out the form below and I'll get back to you via WhatsApp
+          </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField
@@ -100,7 +116,7 @@ export function Contact() {
                 )}
               />
               <Button type="submit" className="w-full">
-                Send Message
+                Send via WhatsApp
               </Button>
             </form>
           </Form>
